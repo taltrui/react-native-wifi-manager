@@ -1,7 +1,11 @@
 import { NativeModules } from 'react-native';
 
 type WifiManagerType = {
-  multiply(a: number, b: number): Promise<number>;
+  connect(
+    ssid: String,
+    passphrase: String,
+    isWEP: Boolean
+  ): Promise<{ ssid: String; passphrase: String; isWEP: Boolean }>;
 };
 
 const { WifiManager } = NativeModules;
